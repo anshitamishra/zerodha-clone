@@ -4,10 +4,12 @@ frontend:
     preBuild:
       commands:
         - cd frontend
+        - npm install -g n
+        - n 20
+        - node -v
         - npm install
     build:
       commands:
-        - cd frontend
         - npm run build
   artifacts:
     baseDirectory: frontend/build
@@ -16,3 +18,4 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
+
